@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>hastanerandevusistemi</class>
+ <widget class="QWidget" name="hastanerandevusistemi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>248</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTextEdit" name="polikinliktxt">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>60</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;POLİKİNLİK SEÇİN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="polikinlikbox">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>80</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Dahiliye   (İç Hastalıkları)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Kardiyoloji  (Kalp ve Damar Hastalıkları)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Gastroenteroloji  (Sindirim Sistemi Hastalıkları)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Kadın Hastalıkları ve Doğum</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Çocuk Sağlığı ve Hastalıkları (Pediatri)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Nöroloji (Sinir Sistemi Hastalıkları)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Göz Hastalıkları (Oftalmoloji)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dermatoloji  (Cildiye)</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Üroloji (İdrar Yolları ve Erkek Sağlığı)</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QTextBrowser" name="doktortxt">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>60</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;DOKTOR SEÇİMİ YAPIN&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="doktorbox">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>80</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Prof.Dr. AHMET KEMALETTİN KOLTKA</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Prof.Dr. FİGEN ESEN</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Prof.Dr. MELTEM SAVRAN KARADENİZ</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Doç.Dr. HALİL ÇETİNGÖK</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Doç.Dr. ACHMET ALI</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Doç.Dr. DEMET ALTUN BİNGÖL</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dr.Öğr.Üyesi HACER AYŞEN YAVRU</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dr.Öğr.Üyesi İLKAY ANAKLI</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Dr.Öğr.Üyesi ÖZLEM POLAT</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Öğr. Gör. Dr. BASRİ AKDOĞAN</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Öğr. Gör. Dr. EBRU EMRE DEMİREL</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Öğr. Gör. Dr. EMRE SERTAÇ BİNGÜL</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Arş.Gör.Dr. AHMET BOZBAY</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Arş.Gör.Dr. AYŞE HÜMA KALYONCU</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Arş.Gör.Dr. AYŞENUR AVARİSLİ</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QTextEdit" name="hastanetxt">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#000000;&quot;&gt;HASTANE SEÇİNİZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="hastanebox">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Arnavutköy Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Beşiktaş Sait Çiftçi Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Beykoz Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Avcılar Murat Kölük Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Başakşehir Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bahçelievler Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Bayrampaşa Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Çatalca İlyas Çokay Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Eyüpsultan Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Kağıthane Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Pendik Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Tuzla Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Silivri Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Şile Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Üsküdar Devlet Hastanesi</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Beylikdüzü Devlet Hastanesi</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QTextEdit" name="tctxt">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;TC KİMLİK NO GİRİNİZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="tcline">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>140</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="adtxt">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>120</y>
+     <width>111</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;ADINIZI GİRİNİZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="soyadtxt">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>120</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;SOY ADINIZI GİRİNİZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="adline">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>140</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="soyadline">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>140</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="hastanerandevusistemitxt">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>20</y>
+     <width>161</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; font-style:italic; color:#000000;&quot;&gt;HASTANE RANDEVU SİSTEMİ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="tarihtxt">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>170</y>
+     <width>111</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;TARİH SEÇİNİZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="saattxt">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>170</y>
+     <width>111</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;SAAT SEÇİNİZ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dateEdit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>190</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="timeEdit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>190</y>
+     <width>91</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

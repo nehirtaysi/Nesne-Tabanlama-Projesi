@@ -1,0 +1,40 @@
+[
+    {
+        "kiralama_id": "7ab622ab-3932-4860-8dd6-2220f7f84873",
+        "arac": {
+            "arac_id": "add7df9b-97d8-40b0-8939-a4d24df879bf",
+            "model": "Ford Odak",
+            "kiralanmis": true
+        },
+        "musteri": {
+            "musteri_id": "44d6d700-9062-4563-a013-20da11cd621c",
+            "ad_soyad": "nehirtaysi",
+            "telefon": "05309107114",
+            "sifre": "49dc52e6bf2abe5ef6e2bb5b0f1ee2d765b922ae6cc8b95d39dc06c21c848f8c"
+        },
+        "sure": 2,
+        "ucret": 200,
+        "kiralama_tarihi": "2000-01-02 00:00",
+        "teslim_tarihi": "2000-01-04 00:00",
+        "beyan_onay": true
+    },
+    {
+        "kiralama_id": "3eefa663-f220-4d84-b97c-d5a4daf6243b",
+        "arac": {
+            "arac_id": "83e8ce2b-971a-4c1c-a455-531890e56aad",
+            "model": "BMW 3 Serisi",
+            "kiralanmis": true
+        },
+        "musteri": {
+            "musteri_id": "b9f0d9f1-3d86-4d0e-a349-5f23fdfe184d",
+            "ad_soyad": "hayatnaztaysi",
+            "telefon": "5309107124",
+            "sifre": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+        },
+        "sure": 12,
+        "ucret": 1200,
+        "kiralama_tarihi": "2000-01-01 00:00",
+        "teslim_tarihi": "2000-01-13 00:00",
+        "beyan_onay": true
+    }
+]
