@@ -6,6 +6,14 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QApplication, QWidget, QMessageBox
 from PyQt6.QtCore import QDateTime, QRect
 
+
+from PyQt6.QtCore import QRegularExpression
+from PyQt6.QtGui import QRegularExpressionValidator
+from PyQt6.QtWidgets import QMessageBox
+
+
+
+
 class Arac:
     def __init__(self, arac_id, model):
         self.arac_id = arac_id
@@ -95,13 +103,34 @@ class Ui_arackiralamasistemi(object):
         self.lntelefonnumara.setGeometry(QRect(80, 30, 131, 21))
         self.lntelefonnumara.setObjectName("lntelefonnumara")
         
+        
+        self.lntelefonnumara.setMaxLength(10)                      
+        regex = QRegularExpression(r"\d{0,10}")                    
+        self.lntelefonnumara.setValidator(QRegularExpressionValidator(regex))
+        
+        
         self.lnkullanicadi = QtWidgets.QLineEdit(arackiralamasistemi)
         self.lnkullanicadi.setGeometry(QRect(80, 60, 131, 21))
         self.lnkullanicadi.setObjectName("lnkullanicadi")
         
+        
+        regex_user = QRegularExpression(r"^[\p{L}_\s]{0,20}$")
+        self.lnkullanicadi.setValidator(QRegularExpressionValidator(regex_user))
+        self.lnkullanicadi.setMaxLength(20)  
+        
+        
+        
         self.linesifre = QtWidgets.QLineEdit(arackiralamasistemi)
         self.linesifre.setGeometry(QRect(80, 90, 131, 20))
         self.linesifre.setObjectName("linesifre")
+        
+
+
+        
+        
+        
+        
+        
         
         self.bttamamla = QtWidgets.QPushButton(arackiralamasistemi)
         self.bttamamla.setGeometry(QRect(160, 130, 60, 17))
@@ -137,8 +166,10 @@ class Ui_arackiralamasistemi(object):
         self.radioButton_4.setText("BMW 3 Serisi")
         self.radioButton_4.setObjectName("radioButton_4")
         
+        
+        
         self.radioButton_5 = QtWidgets.QRadioButton(arackiralamasistemi)
-        self.radioButton_5.setGeometry(QRect(320, 110, 100, 20))
+        self.radioButton_5.setGeometry(QRect(320, 125, 100, 20))
         self.radioButton_5.setText("Renault Clio")
         self.radioButton_5.setObjectName("radioButton_5")
         
@@ -195,7 +226,7 @@ class AracKiralamaSistemi(QWidget):
     def __init__(self):
         super().__init__()
         self.ui = Ui_arackiralamasistemi()
-        self.ui.setupUi(self)
+        self.ui.setupUi(self)  
 
         # Veri yapıları
         self.araclar = []

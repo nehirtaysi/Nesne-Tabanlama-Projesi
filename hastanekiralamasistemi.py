@@ -3,6 +3,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import json
 import os
 
+from PyQt6.QtGui import QRegularExpressionValidator
+from PyQt6.QtCore import QRegularExpression
+from PyQt6.QtWidgets import QLineEdit
+
+
+
+
+
+
 class Hasta:
     def __init__(self, isim, tc):
         self.isim = isim
@@ -164,12 +173,19 @@ class Ui_hastanerandevusistemi(object):
         self.tctxt.setHtml("<p align=\"center\"><span style=\" font-size:7pt; color:#A52A2A;\">TC KİMLİK NO GİRİNİZ</span></p>")
         self.tctxt.setReadOnly(True)
         self.tctxt.setStyleSheet("background-color: transparent; color: #A52A2A;")
+        
+
 
         # TC number input
         self.tcline = QtWidgets.QLineEdit(hastanerandevusistemi)
         self.tcline.setGeometry(QtCore.QRect(100, 275, 250, 30))
         self.tcline.setStyleSheet("background-color: #FFFFF0; color: #black; padding: 5px; border: 1px solid #cccccc;")
-
+        
+        self.tcline.setInputMask("00000000000;_")
+        
+        
+        
+        
         # Name text
         self.adtxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.adtxt.setGeometry(QtCore.QRect(375, 250, 250, 36))
@@ -181,46 +197,51 @@ class Ui_hastanerandevusistemi(object):
         self.adline = QtWidgets.QLineEdit(hastanerandevusistemi)
         self.adline.setGeometry(QtCore.QRect(375, 275, 250, 30))
         self.adline.setStyleSheet("background-color: #FFFFF0; color: black; padding: 5px; border: 1px solid #cccccc;")
+        
+        
 
-        # Surname text
+
+        
+
+        
         self.soyadtxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.soyadtxt.setGeometry(QtCore.QRect(650, 250, 250, 36))
         self.soyadtxt.setHtml("<p align=\"center\"><span style=\" font-size:7pt; color:#A52A2A;\">SOY ADINIZI GİRİNİZ</span></p>")
         self.soyadtxt.setReadOnly(True)
         self.soyadtxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Surname input
+        
         self.soyadline = QtWidgets.QLineEdit(hastanerandevusistemi)
         self.soyadline.setGeometry(QtCore.QRect(650, 275, 250, 30))
         self.soyadline.setStyleSheet("background-color: #FFFFF0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # Date text
+        
         self.tarihtxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.tarihtxt.setGeometry(QtCore.QRect(200, 360, 250, 30))
         self.tarihtxt.setHtml("<p align=\"center\"><span style=\" font-size:7pt; color:#A52A2A;\">TARİH SEÇİNİZ</span></p>")
         self.tarihtxt.setReadOnly(True)
         self.tarihtxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Date edit
+        
         self.dateEdit = QtWidgets.QDateEdit(hastanerandevusistemi)
         self.dateEdit.setGeometry(QtCore.QRect(200, 390, 250, 30))
         self.dateEdit.setStyleSheet("background-color: #FFFFF0; color: black; padding: 5px; border: 1px solid #cccccc;")
         self.dateEdit.setCalendarPopup(True)
         self.dateEdit.setMinimumDate(QtCore.QDate.currentDate())  # Prevent past dates
 
-        # Time text
+        
         self.saattxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.saattxt.setGeometry(QtCore.QRect(550, 360, 250, 30))
         self.saattxt.setHtml("<p align=\"center\"><span style=\" font-size:7pt; color:#A52A2A;\">SAAT SEÇİNİZ</span></p>")
         self.saattxt.setReadOnly(True)
         self.saattxt.setStyleSheet("background-color: transparent; color: #A52A2A;")
 
-        # Time edit
+        
         self.timeEdit = QtWidgets.QTimeEdit(hastanerandevusistemi)
         self.timeEdit.setGeometry(QtCore.QRect(550, 390, 250, 30))
         self.timeEdit.setStyleSheet("background-color: #FFFFF0; color: #black lack; padding: 5px; border: 1px solid #cccccc;")
 
-        # Save button
+        
         self.saveButton = QtWidgets.QPushButton(hastanerandevusistemi)
         self.saveButton.setGeometry(QtCore.QRect(400, 480, 200, 40))
         self.saveButton.setText("Randevuyu Kaydet")
@@ -228,7 +249,7 @@ class Ui_hastanerandevusistemi(object):
         self.saveButton.clicked.connect(self.save_to_json)
 
     def save_to_json(self):
-        # Collect data from UI
+        
         appointment = {
             "hospital": self.hastanebox.currentText(),
             "clinic": self.polikinlikbox.currentText(),
@@ -240,10 +261,10 @@ class Ui_hastanerandevusistemi(object):
             "time": self.timeEdit.time().toString("HH:mm")
         }
 
-        # Path to JSON file
+        
         json_file = "appointments.json"
 
-        # Load existing data or create new
+        
         if os.path.exists(json_file):
             with open(json_file, "r", encoding="utf-8") as file:
                 try:
@@ -253,14 +274,14 @@ class Ui_hastanerandevusistemi(object):
         else:
             data = {"appointments": []}
 
-        # Append new appointment
+        
         data["appointments"].append(appointment)
 
-        # Save to JSON file
+        
         with open(json_file, "w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False, indent=4)
 
-        # Show confirmation
+        
         QtWidgets.QMessageBox.information(None, "Başarılı", "Randevu kaydedildi!")
 
 if __name__ == "__main__":
@@ -279,10 +300,10 @@ class Ui_hastanerandevusistemi(object):
         hastanerandevusistemi.setWindowTitle("Form")
         hastanerandevusistemi.setStyleSheet("background-color: white;")
 
-        # Title label (replaced QTextEdit with QLabel for cleaner rendering)
+        
         self.hastanerandevusistemitxt = QtWidgets.QLabel(hastanerandevusistemi)
-        self.hastanerandevusistemitxt.setGeometry(QtCore.QRect(200, 20, 400, 50))  # Adjusted width and height
-        font = QtGui.QFont("MS Shell Dlg 2", 14, QtGui.QFont.Bold)  # Increased font size slightly
+        self.hastanerandevusistemitxt.setGeometry(QtCore.QRect(200, 20, 400, 50))  
+        font = QtGui.QFont("MS Shell Dlg 2", 14, QtGui.QFont.Bold)  
         font.setItalic(True)
         self.hastanerandevusistemitxt.setFont(font)
         self.hastanerandevusistemitxt.setText("HASTANE RANDEVU SİSTEMİ")
@@ -290,7 +311,7 @@ class Ui_hastanerandevusistemi(object):
         self.hastanerandevusistemitxt.setStyleSheet("color: #000000;")
         self.hastanerandevusistemitxt.setObjectName("hastanerandevusistemitxt")
 
-        # Hospital selection text
+        
         self.hastanetxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.hastanetxt.setGeometry(QtCore.QRect(50, 70, 180, 31))
         self.hastanetxt.setHtml(
@@ -305,7 +326,7 @@ class Ui_hastanerandevusistemi(object):
         self.hastanetxt.setReadOnly(True)
         self.hastanetxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Hospital combo box
+        
         self.hastanebox = QtWidgets.QComboBox(hastanerandevusistemi)
         self.hastanebox.setGeometry(QtCore.QRect(50, 110, 180, 25))
         self.hastanebox.addItems([
@@ -329,7 +350,7 @@ class Ui_hastanerandevusistemi(object):
         self.hastanebox.setObjectName("hastanebox")
         self.hastanebox.setStyleSheet("background-color: #f0f0f0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # Clinic selection text
+        
         self.polikinliktxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.polikinliktxt.setGeometry(QtCore.QRect(300, 70, 180, 31))
         self.polikinliktxt.setHtml(
@@ -344,7 +365,7 @@ class Ui_hastanerandevusistemi(object):
         self.hastanetxt.setReadOnly(True)
         self.polikinliktxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Clinic combo box
+        
         self.polikinlikbox = QtWidgets.QComboBox(hastanerandevusistemi)
         self.polikinlikbox.setGeometry(QtCore.QRect(300, 110, 180, 25))
         self.polikinlikbox.addItems([
@@ -361,7 +382,7 @@ class Ui_hastanerandevusistemi(object):
         self.polikinlikbox.setObjectName("polikinlikbox")
         self.polikinlikbox.setStyleSheet("background-color: #f0f0f0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # Doctor selection text
+        
         self.doktortxt = QtWidgets.QTextBrowser(hastanerandevusistemi)
         self.doktortxt.setGeometry(QtCore.QRect(550, 70, 180, 31))
         self.doktortxt.setHtml(
@@ -375,7 +396,7 @@ class Ui_hastanerandevusistemi(object):
         self.doktortxt.setObjectName("doktortxt")
         self.doktortxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Doctor combo box
+        
         self.doktorbox = QtWidgets.QComboBox(hastanerandevusistemi)
         self.doktorbox.setGeometry(QtCore.QRect(550, 110, 180, 25))
         self.doktorbox.addItems([
@@ -398,7 +419,7 @@ class Ui_hastanerandevusistemi(object):
         self.doktorbox.setObjectName("doktorbox")
         self.doktorbox.setStyleSheet("background-color: #f0f0f0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # TC number text
+        
         self.tctxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.tctxt.setGeometry(QtCore.QRect(50, 150, 180, 31))
         self.tctxt.setHtml(
@@ -413,13 +434,18 @@ class Ui_hastanerandevusistemi(object):
         self.tctxt.setReadOnly(True)
         self.tctxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # TC number input
+        
         self.tcline = QtWidgets.QLineEdit(hastanerandevusistemi)
         self.tcline.setGeometry(QtCore.QRect(50, 190, 180, 25))
         self.tcline.setObjectName("tcline")
         self.tcline.setStyleSheet("background-color: #f0f0f0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # Name text
+        
+
+    
+
+
+        
         self.adtxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.adtxt.setGeometry(QtCore.QRect(300, 150, 180, 31))
         self.adtxt.setHtml(
@@ -434,13 +460,13 @@ class Ui_hastanerandevusistemi(object):
         self.adtxt.setReadOnly(True)
         self.adtxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Name input
+        
         self.adline = QtWidgets.QLineEdit(hastanerandevusistemi)
         self.adline.setGeometry(QtCore.QRect(300, 190, 180, 25))
         self.adline.setObjectName("adline")
         self.adline.setStyleSheet("background-color: #f0f0f0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # Surname text
+        
         self.soyadtxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.soyadtxt.setGeometry(QtCore.QRect(550, 150, 180, 31))
         self.soyadtxt.setHtml(
@@ -455,13 +481,13 @@ class Ui_hastanerandevusistemi(object):
         self.soyadtxt.setReadOnly(True)
         self.soyadtxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Surname input
+        
         self.soyadline = QtWidgets.QLineEdit(hastanerandevusistemi)
         self.soyadline.setGeometry(QtCore.QRect(550, 190, 180, 25))
         self.soyadline.setObjectName("soyadline")
         self.soyadline.setStyleSheet("background-color: #f0f0f0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # Date text
+        
         self.tarihtxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.tarihtxt.setGeometry(QtCore.QRect(200, 230, 180, 31))
         self.tarihtxt.setHtml(
@@ -476,13 +502,13 @@ class Ui_hastanerandevusistemi(object):
         self.tarihtxt.setReadOnly(True)
         self.tarihtxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Date edit
+        
         self.dateEdit = QtWidgets.QDateEdit(hastanerandevusistemi)
         self.dateEdit.setGeometry(QtCore.QRect(200, 270, 180, 25))
         self.dateEdit.setObjectName("dateEdit")
         self.dateEdit.setStyleSheet("background-color: #f0f0f0; color: black; padding: 5px; border: 1px solid #cccccc;")
 
-        # Time text
+        
         self.saattxt = QtWidgets.QTextEdit(hastanerandevusistemi)
         self.saattxt.setGeometry(QtCore.QRect(450, 230, 180, 31))
         self.saattxt.setHtml(
@@ -497,7 +523,7 @@ class Ui_hastanerandevusistemi(object):
         self.saattxt.setReadOnly(True)
         self.saattxt.setStyleSheet("background-color: transparent; color: black;")
 
-        # Time edit
+        
         self.timeEdit = QtWidgets.QTimeEdit(hastanerandevusistemi)
         self.timeEdit.setGeometry(QtCore.QRect(450, 270, 180, 25))
         self.timeEdit.setObjectName("timeEdit")
