@@ -6,7 +6,7 @@ Python ve PyQt6 kullanarak geliştirdiğim bu masaüstü uygulaması, küç�
 
 Müşteri Yönetimi
 
-# Kayıt olma / giriş doğrulaması (SHA‑256 ile şifreleme)
+Kayıt olma / giriş doğrulaması (SHA‑256 ile şifreleme)
 
 # Araç Filo Takibi
 
